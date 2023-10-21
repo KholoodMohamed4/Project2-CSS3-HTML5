@@ -1,0 +1,517 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    perspective: 500px;
+
+}
+h2{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Line{
+    height: 2.5px;
+    width: 100px;
+    background-color: #EBB8B5;
+    margin: auto;
+    transition: 1s;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+}
+.Title:hover .Line{
+    transform: scale(2,1);
+}
+/*======================================= Section 1 Header =======================================*/
+
+
+.HeaderContainer {
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 15 ;
+    display: flex;
+}
+
+.HeaderContainer .Logo {
+    width:16%;
+    margin-left: 2%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1.8%;
+    font-size: 20px;
+    text-align: left;
+}
+.navbar li{
+    list-style: none;
+    position: relative;
+    margin: 0 12px;
+    padding: 6px 7px;
+}
+.navbar li  a:hover{
+    color: #d05656;
+}
+.navbar > li > a{
+    text-transform: uppercase;
+}
+.navOption::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: 0.2s;
+    z-index: -1;
+}
+.navOption:hover::after{
+   transform: scaleX(1);
+}
+.navOption::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    transform: scaleY(0);
+    transition: 0.2s;
+    z-index: -1;
+}
+.navOption:hover::before{
+    transform: scaleY(1);
+}
+.SepcialIcon::after{
+    position: absolute;
+    content: "0";
+    background-color: #c65858;
+    border-radius: 50%;
+    padding: 1px 5px;
+    bottom: 2%;
+    font-size: 16px;
+    color: white;
+    border-radius: 50%;
+}
+.NavIcons
+{
+    font-size: 130%;
+}
+.NavIcons:hover{
+    color: #d05656;
+}
+.woman{
+    margin-left: 5px;
+    font-weight: 50px;
+    transform: rotate(90deg);
+}
+.navOption:hover .woman {
+    transform: rotate(270deg);
+}
+/*======================================= Section 2 Home Page =======================================*/
+.HomePage{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../Images/Header.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    
+}
+.HomeContent{
+    position: absolute;
+   top: 30%; 
+    left: 8%;
+    font-size: larger;
+}
+.HomeContent h1{
+    margin-top: 10px;
+    font-size: 3em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.HomeContent p{
+    margin-top: 20px;
+    margin-left: 20px;
+    color: rgb(116, 108, 108);
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+}
+.HomeContent button{
+    padding:20px 40px;
+    color: white;
+    font-size: 20px;
+    background-color: #c65858;
+    border: 0;
+    margin-left: 20px;
+    transition: 0.5s;
+}
+.HomeContent button:hover{
+    background-color:black;
+}
+
+.DropDown{
+    position: absolute;
+    width: 900px;
+    height: 50vh;
+    background-color: white;
+    box-shadow: 2px 2px 10px lightgray;
+    padding: 20px;
+    margin-top: 18%;
+    margin-left: -50%;
+    border: 2px solid lightgray;
+    font-size: 85%;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    transition: all .2s ease ;
+}
+.dropOption:hover .DropDown{
+    visibility: visible;
+}
+.dropOption:hover > a{
+    color: #c65858;
+}
+
+.navDropDown > li:hover{
+    color: #d05656;
+}
+.SpecialDropDown{
+    font-weight: bold;
+    font-size: 120%;
+}
+/*======================================= Section 3 categories =======================================*/
+
+.CatContainer{
+    width: 90%;
+    text-align: center;
+    padding: 50px 0;
+    margin: auto;
+}
+.Title{
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+.CatDiv{
+    margin: 10px auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(4,1.5fr);
+    grid-gap:10px;
+}
+.Cat
+{
+    position: relative;
+    transition: 3s;
+    line-height: 30px;
+    text-align:center;
+    transition: 0.3s;
+}
+.Cat img{
+    position: relative;
+}
+
+.Cat p{
+    color: darkgrey;
+    margin-bottom:5px;
+}
+.Cat h3{
+    display: inline-block;
+    font-size: 1.4em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+.Arrow{
+    position: absolute;
+    bottom: 1%;
+    right: 0;
+    visibility: hidden;
+    background-color: #c65858;
+    color: white;
+    line-height: 60px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.Cat:hover .Arrow{
+    visibility: visible;
+}
+
+/*======================================= Section 4 Discount =======================================*/
+.DiscountContainer{
+    width: 90%;
+    margin:auto;
+}
+.ContentContainer{
+    width: 97%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.ImgOne,
+.ImgTwo{
+    width: 25%;
+    height: 100%;
+    position: relative;
+    font-size: 118%;
+    color: white;
+    transition: 0.5s;
+
+}
+.ImgOne img,
+.ImgTwo img{
+    width: 100%;
+}
+.ImgOne:hover,
+.ImgTwo:hover{
+    transform: scale(1.08,1.08);
+}
+.ImgOne h6,
+.ImgTwo h6 {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 125%;
+    font-weight: bold;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.ImgOne p,
+.ImgTwo p{
+    position: absolute;
+    top: 14%;
+    left: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ContentText h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+.ContentText{
+   width: 45%;
+   height: 100%;
+   background-color: #FDF0F0;
+   padding: 27px 27px 3px;
+   position: relative;
+}
+
+.ContentText p{
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-top: 30px;
+
+}
+.ContentText span{
+    display: block;
+    margin-top: 20px;
+    color: gray;
+}
+.ContentText button{
+    padding: 12px 30px;
+    font-size: 14px;
+    line-height: 2;
+    color: #ffffff;
+    background-color: #c65858;
+    border: 0;
+    font-family:  Arial, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition:0.5s;
+}
+.ContentText button:hover{
+    background-color: black;
+}
+.DiscountLines{
+    display: flex;
+    height: 5%;
+    width: 95%;
+    justify-content: flex-end;
+    align-items:flex-end;
+    position: absolute;
+    bottom: 5%;
+}
+.DiscountLines .Lines{
+    width: 60px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #c65858;
+    margin-right: 10px;
+}
+
+/*======================================= Section 5 Features=======================================*/
+
+.FeaturesContainer{
+    width:90%;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+.Feature{
+    width: 20%;
+    text-align: center;
+    border-right: 2px solid #EBB8B5;
+    padding: 15px;
+}
+.features-icons{
+    background-image: url(../Images/service-icon.png);
+    height: 55px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+.icon1{
+    background-position: center 5px;
+    transition: all .5s;
+}
+.Feature:hover .icon1{
+    background-position: center -86px;
+}
+.icon2{
+    background-position: center -180px;
+    transition: all .5s;
+}
+.Feature:hover .icon2{
+    background-position: center -273px;
+}
+.icon3{
+    background-position: center -366px;
+    transition: all .5s;
+}
+.Feature:hover .icon3{
+    background-position: center -455px;
+}
+.icon4{
+    background-position: center -549px;
+    transition: all .5s;
+}
+.Feature:hover .icon4{
+    background-position: center -639px
+}
+.icon5{
+    background-position: center -734px;
+    transition: all .5s;
+}
+.Feature:hover .icon5{
+    background-position: center -828px
+}
+.special-feature{
+    border: 0;
+}
+.Feature p{
+    color: #d05656;
+}
+/*======================================= Section 5 Features=======================================*/
+.Prouct-container{
+    padding: 40px;
+}
+.Prouct-container .options{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+.Prouct-container .options li{
+    margin: 20px 50px ;
+}
+.Cards-container{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-template-rows: repeat(2,400px);
+    grid-auto-rows: minmax(310px ,auto);
+    grid-gap: 10px;
+}
+.Card{
+    position: relative;
+}
+.CardImg{
+    position: relative;
+    width: 90%;
+    height: 67%;
+    transform-style: preserve-3d;
+}
+.img-back , .img-front{
+    height: 100%;
+    width: 100%;
+}
+.img-front{
+    position: relative;
+}
+.img-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scalex(0);
+    opacity: 0.9;
+    transition: transform 0.2s;
+}
+
+.CardImg:hover .img-front img{
+    opacity: .1;
+}
+.CardImg:hover .img-back{
+    transform: scaleX(1);
+}
+.CardDetails{
+    padding: 15px 10px;
+    line-height: 30px;
+    text-align: center;
+}
+.Star:not(.NotStar){
+    color: goldenrod;
+}
+.social-media-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+.Social-media{
+    
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-top: 10px;
+}
+.P-Price{
+    font-weight: bold;
+}
